@@ -20,7 +20,7 @@ console.log(
         {
             filter : (name) => name[0] !== 'a'
         },
-        {},
+        dst,
         src
     )
 ); // { a1 : 7, a2 : 8, b : 3, c : 4 }
@@ -63,24 +63,25 @@ class MyLibClass extends BaseClassFromMyLib {
 }
 ```
 
-In this case, i need `scan` (and its dependences) from ExternalClass but `log` 
-(and other methods) from my base class.
+In this case, we need `scan` (and its dependences) from ExternalClass but `log` 
+(and other methods) from our base class.
 
 Any of other libs for merging/assigning properties in npm will overwrite `log` 
-from base class. So i created `augmentClass` for merging properties selectively.
+from base class. So `augmentObject` and `augmentClass` was created for 
+merging properties selectively.
 
 ```js
 class MyLibClass extends BaseClassFromMyLib {
     // Other methods
 }
 augmentClass(
-    MyLibClass, 
     {
         // You can use a filter function to say when to overwrite.
         // filter : (name, dstClassProto, srcClassProto) => {
         //    // return `true` if property `name` must be overwrite.
         // }
     }, 
+    MyLibClass, 
     ExternalClass/*,
     OtherClass,
     MoreOtherClass,

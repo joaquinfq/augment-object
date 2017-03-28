@@ -1,9 +1,9 @@
 {
-    "version"     : "0.1.0",
-    "name"        : "augment-object",
-    "author"      : "Joaquín Fernández",
-    "description" : "Augment selectively an object or the prototype of a class.",
-    "keywords"    : [
+    "version": "0.1.1",
+    "name": "augment-object",
+    "author": "Joaquín Fernández",
+    "description": "Augment selectively an object or the prototype of a class.",
+    "keywords": [
         "assign",
         "augment",
         "class",
@@ -11,13 +11,13 @@
         "inherits",
         "merge"
     ],
-    "license"     : "MIT",
-    "homepage"    : "http://www.joaquinfernandez.net",
-    "repository"  : {
-        "type" : "git",
-        "url"  : "https://github.com/joaquinfq/augment-object"
+    "license": "MIT",
+    "homepage": "http://www.joaquinfernandez.net",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/joaquinfq/augment-object"
     },
-    "scripts"     : {
-        "test" : "node test"
+    "scripts": {
+        "test": "node test"
     }
 }
