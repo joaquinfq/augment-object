@@ -1,3 +1,4 @@
+const getAllPropertyNames = require('get-all-property-names');
 /**
  * Asigna a la clase los métodos y propiedades de las demás clases especificadas
  * que pasan el filtro.
@@ -57,14 +58,14 @@ function augmentObject(options = {}, dst, ...objects)
         }
         const _filter = typeof options.filter === 'function'
             ? options.filter
-            : (name, dst, src) => src.hasOwnProperty(name) && !dst[name];
+            : (name, dst, src) => dst[name] === undefined;
         //------------------------------------------------------------------------------
         // Iteramos sobre los objetos que aportan sus métodos y propiedades.
         //------------------------------------------------------------------------------
         objects.forEach(
             src =>
             {
-                Object.getOwnPropertyNames(src).forEach(
+                getAllPropertyNames(src).forEach(
                     name =>
                     {
                         if (_filter(name, dst, src))

@@ -1,5 +1,5 @@
 {
-    "version": "0.1.2",
+    "version": "0.1.3",
     "name": "augment-object",
     "author": "Joaquín Fernández",
     "description": "Augment selectively an object or the prototype of a class.",
@@ -19,5 +19,8 @@
     },
     "scripts": {
         "test": "node test"
+    },
+    "dependencies": {
+        "get-all-property-names": "^0.1.0"
     }
 }
