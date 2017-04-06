@@ -55,7 +55,7 @@ function augmentObject(options = {}, dst, ...objects)
         {
             options = {};
         }
-        const _filter = options.filter === 'function'
+        const _filter = typeof options.filter === 'function'
             ? options.filter
             : (name, dst, src) => src.hasOwnProperty(name) && !dst[name];
         //------------------------------------------------------------------------------
